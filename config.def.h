@@ -23,5 +23,5 @@ static const struct arg args[] = {
   { run_command,  "^C7^ ",   ""},
   { run_command,  "^C3^ %s",   "/opt/slstatus/volume"},
   { run_command,  "^C7^ ",   ""},
-  { run_command,  "^C4^ %s",   "/opt/slstatus/clock"},
+  { run_command,  "^C4^ %s ",   "/opt/slstatus/clock"},
 };
