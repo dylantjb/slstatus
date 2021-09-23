@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Prints the current volume or ﱝ if muted
+# If there are headphones connected (specify mac address) then  is shown.
+
+[ "$(amixer get Master | grep '%' | grep -oE '[^ ]+$' | grep off)" ] && echo 'ﱝ 0%' && exit
+
+[ "$(bluetoothctl info "EB:06:EF:81:EA:AE" | grep -i "cted: y")" ] && headphones=true
+
+vol="$(amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1)"
+
+case "$((
+  headphones ? 1 :
+  vol >= 0 && vol < 10    ? 2 :
+  vol >= 10 && vol < 30   ? 3 :
+  vol >= 30 && vol < 70   ? 4 :
+  vol >= 70 && vol <= 100 ? 5 : 0))" in
+  (1) echo " $vol%"  ;;
+  (2) echo " $vol%"  ;;
+  (3) echo "奔 $vol%"  ;;
+  (4) echo " $vol%"  ;;
+  (5) echo "墳 $vol%" ;;
+esac
+
