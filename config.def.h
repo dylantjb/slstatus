@@ -15,8 +15,6 @@ static const struct arg args[] = {
   { run_command,  "^C7^ ",   ""},
   { run_command,  "^C6^ %s",   "/opt/slstatus/nettraf"},
   { run_command,  "^C7^ ",   ""},
-  { run_command,  "^C5^ %s",   "/opt/slstatus/forecast"},
-  { run_command,  "^C7^ ",   ""},
   { run_command,  "^C2^ %s",   "/opt/slstatus/memory"},
   { run_command,  "^C7^ ",   ""},
   { run_command,  "^C7^ %s",   "/opt/slstatus/battery"},
