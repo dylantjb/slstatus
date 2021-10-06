@@ -5,12 +5,12 @@
 
 [ "$(amixer get Master | grep '%' | grep -oE '[^ ]+$' | grep off)" ] && echo 'ﱝ 0%' && exit
 
-[ "$(bluetoothctl info "EB:06:EF:81:EA:AE" | grep -i "cted: y")" ] && headphones=true
+[ "$(bluetoothctl info "2C:FD:B3:60:6C:DF" | grep -i "cted: y")" ] && headphones=1
 
 vol="$(amixer get Master | grep '%' | head -n 1 | cut -d '[' -f 2 | cut -d '%' -f 1)"
 
 case "$((
-  headphones ? 1 :
+  headphones==1 ? 1 :
   vol >= 0 && vol < 10    ? 2 :
   vol >= 10 && vol < 30   ? 3 :
   vol >= 30 && vol < 70   ? 4 :
