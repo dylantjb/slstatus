@@ -13,8 +13,6 @@ static const struct arg args[] = {
 	/* function format          argument */
   { run_command,  "^C1^ %s",   "/opt/slstatus/internet"},
   { run_command,  "^C7^ ",   ""},
-  { run_command,  "^C6^ %s",   "/opt/slstatus/nettraf"},
-  { run_command,  "^C7^ ",   ""},
   { run_command,  "^C2^ %s",   "/opt/slstatus/memory"},
   { run_command,  "^C7^ ",   ""},
   { run_command,  "^C7^ %s",   "/opt/slstatus/battery"},
